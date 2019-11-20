@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const App = () => {
     const [currentResource, setResourceValue] = useState('posts');
+    let [currentCount, setCount] = useState(0);
 
     return (
         <div>
@@ -10,6 +11,9 @@ const App = () => {
                 <button onClick={() => setResourceValue('todos')}>Todos</button>
             </div>
             {currentResource}
+            <div>
+                <button onClick={() => setCount(++currentCount)}>Counter: {currentCount}</button>
+            </div>
         </div>
     );
 };
