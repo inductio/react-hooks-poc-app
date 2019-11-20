@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import ResourceList from "./ResourceList";
 
 const App = () => {
-    const [currentResource, setResourceValue] = useState('posts');
-    let [currentCount, setCount] = useState(0);
+    const [resource, setResourceValue] = useState('posts');
 
     return (
         <div>
@@ -10,10 +10,7 @@ const App = () => {
                 <button onClick={() => setResourceValue('posts')}>Posts</button>
                 <button onClick={() => setResourceValue('todos')}>Todos</button>
             </div>
-            {currentResource}
-            <div>
-                <button onClick={() => setCount(++currentCount)}>Counter: {currentCount}</button>
-            </div>
+            <ResourceList resource={resource} />
         </div>
     );
 };
